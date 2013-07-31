@@ -37,7 +37,7 @@ class JobExecutor
   def get_next_job(finished_job)
     locked_operation do
       @threads_working -= 1 if finished_job
-      return nil unless @jobs.length + @threads_working
+      return nil unless ((@jobs.length + @threads_working) > 0)
       @threads_working += 1
       @jobs.shift
     end
