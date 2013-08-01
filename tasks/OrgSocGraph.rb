@@ -30,10 +30,12 @@ module OrgSocGraph
             end
                 
             def execute(doc, data_store, fields)
-              # crawl for meta description 
+              # crawl for meta description
+              meta_desc = doc.css("meta[name='description']").first
+              content = meta_desc['content'] 
                data_store.add_item("orgs.csv", [
                  self.url,
-                 doc.css("meta[name='description']").first
+                 content
                ])
             end
           end.new(r["website_url"])
