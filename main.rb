@@ -1,4 +1,7 @@
+# for compatibility with 1.8.x require rubygems
+require 'rubygems'
 require 'open-uri'
+# 1.8.x requires <= 1.5.0 of Nokogiri
 require 'nokogiri'
 require 'csv'
 require 'mechanize'
