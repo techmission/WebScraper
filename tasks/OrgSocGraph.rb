@@ -20,7 +20,7 @@ module OrgSocGraph
       
       def get_children(doc)
         # do MySQL query to get the URLs of the child jobs
-        dbh = MySQL.real_connect("192.168.0.1", "turb_mi5", "db-fastlane", "techmi5_socgraph")
+        dbh = MySQL.real_connect("localhost", "turb_mi5", "db-fastlane", "techmi5_socgraph")
         # limit to 10 for test run
         res = dbh.query('SELECT website_url FROM tbl_organizations WHERE website_url != "" LIMIT 10')
         res.each_row do |r|
