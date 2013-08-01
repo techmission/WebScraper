@@ -21,8 +21,6 @@ module DMOZ
       end
       
       def execute(doc, data_store, fields)
-         url_node = doc.css(".directory-url li a:first")
-       
          data_store.add_item("dmoz.csv", [
            self.url,
            doc.css(".directory-url li a")[0].text,
